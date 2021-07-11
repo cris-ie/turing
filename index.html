@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <title>dea simulator</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="  https://unpkg.com/intro.js/minified/introjs.min.css" />
+  <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+  <link rel="shortcut icon" href="./favicon.ico" />
+</head>
+
+<body>
+  <header id="main_head">
+
+    <img class="logo" src="favicon.ico" alt="Loogoo" />
+    <h1>embedded reber with turing</h1>
+  </header>
+  <div>
+    <form>
+      <fieldset id="inputHeader">
+        <legend>input</legend>
+        <label for="insertWord">insert word</label>
+        <input id="insertWord" type="text" size="30" placeholder="word you want to check"
+          onchange="onInputchanged(this.value)" oninput="checkPlay()" />
+        <button id="correctWord" type="button" onclick="onValid()">create correct reber word</button>
+        <button id="incorrectWord" type="button" onclick="onInvalid()">create incorrect reber word</button>
+      </fieldset>
+      <div id="main">
+        <div id="tape">
+
+        </div>
+        <div id="stuff">
+          <svg id="graph" width="1724px" height="570px" version="1.1" viewBox="-.5 -.5 1724 570"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+            <circle id="q2" cx="240" cy="285" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:201px;padding-top:285px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q2</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text6" x="240" y="289" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q2</text>
+              </switch>
+            </g>
+            <circle id="q3" cx="440" cy="285" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:401px;padding-top:285px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q3</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text14" x="440" y="289" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q3</text>
+              </switch>
+            </g>
+            <circle id="q4" cx="600" cy="85" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:561px;padding-top:85px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q4</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text22" x="600" y="89" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q4</text>
+              </switch>
+            </g>
+            <circle id="q6" cx="600" cy="485" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:561px;padding-top:485px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q6</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text30" x="600" y="489" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q6</text>
+              </switch>
+            </g>
+            <circle id="q5" cx="800" cy="85" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:761px;padding-top:85px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q5</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text38" x="800" y="89" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q5</text>
+              </switch>
+            </g>
+            <g stroke-miterlimit="10">
+              <path d="m280 285h114" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m399 285-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m469 257 87.8-166" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m559 86-0.18 7.82-2.27-3.18-3.92-0.09z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m461 319 96.1 160" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m559 484-6.6-4.2 3.9-0.3 2.1-3.3z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m772 113-141 338" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m629 456-0.54-7.8 2.56 2.96 3.9-0.27z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m572 56.7q18.3-51.7 28.3-56.7t26.5 50.6" pointer-events="stroke"
+                style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m628 55.6-5.35-5.71 3.86 0.68 2.85-2.67z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m640 85h114" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m759 85-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+            </g>
+            <circle id="q0" cx="40" cy="445" r="40" pointer-events="all" style="fill:#ffe0f9;stroke:#000" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1px;padding-top:445px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q0</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text70" x="40" y="449" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q0</text>
+              </switch>
+            </g>
+            <circle id="q1" cx="40" cy="285" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1px;padding-top:285px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q1</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text78" x="40" y="289" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q1</text>
+              </switch>
+            </g>
+            <circle transform="translate(2,3)" cx="1680" cy="285" r="40" pointer-events="all"
+              style="opacity:.25;stroke:#000" />
+            <circle id="q14" cx="1680" cy="285" r="40" pointer-events="all" style="fill:#ffe0f9;stroke:#000" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1641px;padding-top:285px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:div>q14</xhtml:div>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text88" x="1680" y="289" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q14</text>
+              </switch>
+            </g>
+            <circle cx="1680" cy="285" r="35" pointer-events="all" style="fill:none;stroke:#000" />
+            <circle id="q7" cx="800" cy="485" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:761px;padding-top:485px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q7</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text98" x="800" y="489" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q7</text>
+              </switch>
+            </g>
+            <circle id="q8" cx="960" cy="285" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:921px;padding-top:285px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q8</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text106" x="960" y="289" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q8</text>
+              </switch>
+            </g>
+            <g stroke-miterlimit="10">
+              <path d="m956 330t-116 155" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m959 326-1.4 7.7-1.75-3.5-3.85-0.7z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m956 240t-116-155" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m959 244-7-3.5 3.85-0.7 1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m751 485t-111 0" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m756 485-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+            </g>
+            <circle id="q9" cx="1160" cy="285" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1121px;padding-top:285px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q9</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text126" x="1160" y="289" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q9</text>
+              </switch>
+            </g>
+            <circle id="q10" cx="1320" cy="85" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1281px;padding-top:85px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q10</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text134" x="1320" y="89" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q10</text>
+              </switch>
+            </g>
+            <circle id="q12" id="q9" cx="1320" cy="485" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1281px;padding-top:485px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q12</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text142" x="1320" y="489" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q12</text>
+              </switch>
+            </g>
+            <circle id="q11" cx="1520" cy="85" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1481px;padding-top:85px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q11</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text150" x="1520" y="89" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q11</text>
+              </switch>
+            </g>
+            <g stroke-miterlimit="10">
+              <path d="m1189 257 87.8-166" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1279 86-0.18 7.82-2.27-3.18-3.92-0.09z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1181 319 96.1 160" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1279 484-6.6-4.2 3.9-0.3 2.1-3.3z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1360 85h114" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1479 85-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+            </g>
+            <circle id="q13" cx="1520" cy="485" r="40" pointer-events="all" style="fill:#ffe0f9" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1481px;padding-top:485px;width:78px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        q13</xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text170" x="1520" y="489" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">q13</text>
+              </switch>
+            </g>
+            <g stroke-miterlimit="10">
+              <path d="m1676 330t-116 155" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1679 326-1.4 7.7-1.75-3.5-3.85-0.7z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1676 240t-116-155" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1679 244-7-3.5 3.85-0.7 1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1471 485t-111 0" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1476 485-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1e3 285h114" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1119 285-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1492 56.7q18.3-51.7 28.3-56.7t26.5 50.6" pointer-events="stroke"
+                style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1548 55.6-5.34-5.72 3.85 0.68 2.86-2.67z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m800 445v-314" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m800 126 3.5 7-3.5-1.75-3.5 1.75z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m628 513q-18.3 61.7-33.3 51.7t-22-45.5" pointer-events="stroke"
+                style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m572 514 4.8 6.19-3.77-1.04-3.1 2.4z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m1548 515q-18.3 61.7-33.3 51.7t-22-45.5" pointer-events="stroke"
+                style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m1492 516 4.8 6.18-3.78-1.03-3.09 2.39z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m80 284h114" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m199 284-7 3.5 1.75-3.5-1.75-3.5z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+              <path d="m40 405v-73.6" pointer-events="stroke" style="fill:none;stroke-miterlimit:10;stroke:#000" />
+              <path d="m40 326 3.5 7-3.5-1.75-3.5 1.75z" pointer-events="all"
+                style="stroke-miterlimit:10;stroke:#000" />
+            </g>
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:40px;padding-top:365px;width:1px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="background-color:#ffffff;color:#000000;display:inline-block;font-family:Helvetica;font-size:11px;line-height:1.2;pointer-events:all;white-space:nowrap">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>B -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text216" x="40" y="368" font-size="11px"
+                  style="fill:#000000;font-family:Helvetica;font-size:11px;text-anchor:middle">B -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="110" y="245" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:111px;padding-top:255px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>P -&gt; P,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text224" x="140" y="259" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">P -&gt; P,R</text>
+              </switch>
+            </g>
+            <rect x="310" y="265" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:311px;padding-top:275px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>B -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text232" x="340" y="279" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">B -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="110" y="305" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:111px;padding-top:315px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>T -&gt; T,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text240" x="140" y="319" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">T -&gt; T,R</text>
+              </switch>
+            </g>
+            <rect x="430" y="185" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:431px;padding-top:195px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>T -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text248" x="460" y="199" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">T -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="420" y="365" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:421px;padding-top:375px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>P -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text256" x="450" y="379" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">P -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="670" y="265" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:671px;padding-top:275px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>X -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text264" x="700" y="279" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">X -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="623" y="25" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:624px;padding-top:35px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>S -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text272" x="653" y="39" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">S -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="623" y="525" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:624px;padding-top:535px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:div>
+                          <xhtml:font style="font-size:14px">
+                            <xhtml:b>T-&gt; _,R</xhtml:b>
+                          </xhtml:font>
+                        </xhtml:div>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text280" x="653" y="539" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">T-&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="670" y="65" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:671px;padding-top:75px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>X -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text288" x="700" y="79" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">X -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="670" y="465" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:671px;padding-top:475px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>V -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text296" x="700" y="479" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">V -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="770" y="265" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:771px;padding-top:275px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>P -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text304" x="800" y="279" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">P -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="920" y="175" width="60" height="30" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:921px;padding-top:190px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>S -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text312" x="950" y="194" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">S -&gt; _,P</text>
+              </switch>
+            </g>
+            <rect x="930" y="365" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:931px;padding-top:375px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>V -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text320" x="960" y="379" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">V -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="1030" y="265" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1031px;padding-top:275px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>E -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text328" x="1060" y="279" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">E -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="1160" y="185" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1161px;padding-top:195px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>P -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text336" x="1190" y="199" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">P -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="1150" y="365" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1151px;padding-top:375px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>T -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text344" x="1180" y="379" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">T -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="1390" y="65" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1391px;padding-top:75px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>E -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text352" x="1420" y="79" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">E -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="1550" y="15" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1551px;padding-top:25px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>_ -&gt; _,L</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text360" x="1580" y="29" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">_ -&gt; _,L</text>
+              </switch>
+            </g>
+            <rect x="1600" y="125" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1655px ;padding-top:200px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>P -&gt; P,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text368" x="1630" y="139" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">P -&gt; P,R</text>
+              </switch>
+            </g>
+            <rect x="1390" y="465" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1391px;padding-top:475px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>E -&gt; _,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text376" x="1420" y="479" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">E -&gt; _,R</text>
+              </switch>
+            </g>
+            <rect x="1650" y="365" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1651px;padding-top:375px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>T -&gt; T,R</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text384" x="1680" y="379" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">T -&gt; T,R</text>
+              </switch>
+            </g>
+            <rect x="1550" y="525" width="60" height="20" pointer-events="all" style="fill:none" />
+            <g transform="translate(-.5 -.5)">
+              <switch>
+                <foreignObject width="100%" height="100%" pointer-events="none" style="overflow:visible;text-align:left"
+                  requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                  <xhtml:div
+                    style="align-items:unsafe center;display:flex;height:1px;justify-content:unsafe center;margin-left:1551px;padding-top:535px;width:58px">
+                    <xhtml:div style="box-sizing:border-box;font-size:0;text-align:center">
+                      <xhtml:div
+                        style="color:#000000;display:inline-block;font-family:Helvetica;font-size:12px;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+                        <xhtml:font style="font-size:14px">
+                          <xhtml:b>_ -&gt; _,L</xhtml:b>
+                        </xhtml:font>
+                      </xhtml:div>
+                    </xhtml:div>
+                  </xhtml:div>
+                </foreignObject><text id="text392" x="1580" y="539" font-size="12px"
+                  style="fill:#000000;font-family:Helvetica;font-size:12px;text-anchor:middle">_ -&gt; _,L</text>
+              </switch>
+            </g>
+          </svg>
+          <table id="table">
+            <thead>
+              <tr>
+                <th>Q</th>
+                <th>Γ</th>
+                <th>Q</th>
+                <th>Γ</th>
+                <th>{L,R}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="rq0">
+                <td>q0</td>
+                <td>B</td>
+                <td>q1</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq1">
+                <td>q1</td>
+                <td>P</td>
+                <td>q2</td>
+                <td>P</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq1">
+                <td>q1</td>
+                <td>T</td>
+                <td>q2</td>
+                <td>T</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq2">
+                <td>q2</td>
+                <td>B</td>
+                <td>q3</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq3">
+                <td>q3</td>
+                <td>T</td>
+                <td>q4</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq3">
+                <td>q3</td>
+                <td>P</td>
+                <td>q6</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq4">
+                <td>q4</td>
+                <td>S</td>
+                <td>q4</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq4">
+                <td>q4</td>
+                <td>X</td>
+                <td>q5</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq5">
+                <td>q5</td>
+                <td>X</td>
+                <td>q6</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq5">
+                <td>q5</td>
+                <td>S</td>
+                <td>q8</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq6">
+                <td>q6</td>
+                <td>T</td>
+                <td>q6</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq6">
+                <td>q6</td>
+                <td>V</td>
+                <td>q7</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq7">
+                <td>q7</td>
+                <td>P</td>
+                <td>q5</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq7">
+                <td>q7</td>
+                <td>V</td>
+                <td>q8</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq8">
+                <td>q8</td>
+                <td>E</td>
+                <td>q9</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq9">
+                <td>q9</td>
+                <td>P</td>
+                <td>q10</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq9">
+                <td>q9</td>
+                <td>T</td>
+                <td>q12</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq10">
+                <td>q10</td>
+                <td>E</td>
+                <td>q11</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq11">
+                <td>q11</td>
+                <td>_</td>
+                <td>q11</td>
+                <td>_</td>
+                <td>L</td>
+              </tr>
+              <tr id="rq11">
+                <td>q11</td>
+                <td>P</td>
+                <td>q14</td>
+                <td>P</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq12">
+                <td>q12</td>
+                <td>E</td>
+                <td>q13</td>
+                <td>_</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq13">
+                <td>q13</td>
+                <td>B</td>
+                <td>q13</td>
+                <td>_</td>
+                <td>L</td>
+              </tr>
+              <tr id="rq13">
+                <td>q13</td>
+                <td>T</td>
+                <td>q14</td>
+                <td>T</td>
+                <td>R</td>
+              </tr>
+              <tr id="rq14">
+                <td colspan="5">Q<sub>accept</sub> q14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="controls">
+        <button id="play" type="button" onclick="onPlay()">play</button>
+        <button id="reset" type="button" onclick="window.location.reload();">reset</button>
+        <button id="help" type="button" onclick="onHelp()">help</button>
+        <button id="doku" type="button" onclick="window.location='./doc.html'">doc</button>
+        <label for="aRange">speed</label>
+        <input id="aRange" type="range" min="1" max="5" step="1" value="1" />
+      </div>
+    </form>
+  </div>
+
+  <script src="./intro.min.js"></script>
+  <script src="./utils.js"></script>
+  <script src="./dea.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

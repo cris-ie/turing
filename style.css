@@ -1,0 +1,30 @@
+th:nth-of-type(2) {
+  border-right: 1px solid black;
+}
+#main_head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+#main_head > img {
+  height: 64px;
+  width: 64px;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#stuff {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+#stuff > table {
+  min-width: 400px;
+}
+.selected {
+  background-color: yellow;
+}

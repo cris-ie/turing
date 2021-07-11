@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Validierung von Reberwörtern mit Hilfe einer Turing Maschine</h1>
+    <p>
+
+    </p>
+    <h2>Implementierung</h2>
+    <p>
+        Der Ausführungsgraph der Turing Maschine ist im Code als ein Javascript Objekt ausgeführt. Das Objekt beinhaltet
+        alle Informationen um von einem Zustand zum nächsten Zustand zu kommen <br />
+    <pre>
+            const states = {
+                q0: {
+                  id: "q0",
+                  prevId: [],
+                  possibleNext: [{ nextState: "q1", pre: ["B"], action: "R", write: "_" }],
+                },
+                q1: {
+                  id: "q1",
+                  prevId: ["q0"],
+                  possibleNext: [
+                    { nextState: "q2", pre: "P", action: "R", write: "P" },
+                    { nextState: "q2", pre: "T", action: "R", write: "T" },
+                  ],
+                },
+              
+                q2: {
+                  id: "q2",
+                  prevId: ["q1"],
+                  possibleNext: [{ nextState: "q3", pre: "B", action: "R", write: "_" }],
+                },
+                q3: {
+                  id: "q3",
+                  prevId: ["q2"],
+                  possibleNext: [
+                    { nextState: "q4", pre: "T", action: "R", write: "_" },
+                    { nextState: "q6", pre: "P", action: "R", write: "_" },
+                  ],
+                },
+                q4: {
+                  id: "q4",
+                  prevId: ["q4"],
+                  possibleNext: [
+                    { nextState: "q4", pre: "S", action: "R", write: "_" },
+                    { nextState: "q5", pre: "X", action: "R", write: "_" },
+                  ],
+                },
+                q5: {
+                  id: "q5",
+                  prevId: ["q4", "q7"],
+                  possibleNext: [
+                    { nextState: "q6", pre: "X", action: "R", write: "_" },
+                    { nextState: "q8", pre: "S", action: "R", write: "_" },
+                  ],
+                },
+                q6: {
+                  id: "q6",
+                  prevId: ["q3", "q5"],
+                  possibleNext: [
+                    { nextState: "q6", pre: "T", action: "R", write: "_" },
+                    { nextState: "q7", pre: "V", action: "R", write: "_" },
+                  ],
+                },
+                q7: {
+                  id: "q7",
+                  prevId: ["q6"],
+                  possibleNext: [
+                    { nextState: "q5", pre: "P", action: "R", write: "_" },
+                    { nextState: "q8", pre: "V", action: "R", write: "_" },
+                  ],
+                },
+                q8: {
+                  id: "q8",
+                  prevId: ["q5", "q7"],
+                  possibleNext: [{ nextState: "q9", pre: "E", action: "R", write: "_" }],
+                },
+                q9: {
+                  id: "q9",
+                  prevId: ["q8"],
+                  possibleNext: [
+                    { nextState: "q10", pre: "P", action: "R", write: "_" },
+                    { nextState: "q12", pre: "T", action: "R", write: "_" },
+                  ],
+                },
+                q10: {
+                  id: "q10",
+                  prevId: ["q9"],
+                  possibleNext: [{ nextState: "q11", pre: "E", action: "R", write: "__" }],
+                },
+                q11: {
+                  id: "q11",
+                  prevId: ["q10"],
+                  possibleNext: [
+                    { nextState: "q14", pre: "P", action: "R", write: "R" },
+                    { nextState: "q11", pre: "_", action: "L", write: "_" },
+                  ],
+                },
+                q12: {
+                  id: "q12",
+                  prevId: ["q9"],
+                  possibleNext: [{ nextState: "q13", pre: "E", action: "R", write: "__" }],
+                },
+                q13: {
+                  id: "q13",
+                  prevId: ["q12"],
+                  possibleNext: [
+                    { nextState: "q14", pre: "T", action: "R", write: "T" },
+                    { nextState: "q13", pre: "_", action: "L", write: "_" },
+                  ],
+                },
+                q14: {
+                  id: "q14",
+                  prevId: ["q11", "q13"],
+                  possibleNext: [],
+                },
+              };
+        </pre>
+    </p>
+    <p>
+        Die Generierung der Reberwörter erfolgt mittels einer DEA welche im Rahmen eines vorherigen Projektes entstanden
+        ist. Sie ist abgekapselt in der Datei <a href="./dea.js">dea.js</a> zu finden.
+    </p>
+    <h2>Technik</h2>
+    <ul>
+        <li>Intro.js - User Tutorial</li>
+        <li>HTML/JS/CSS - Webanwendung</li>
+    </ul>
+    <button onclick="window.location='./index.html'">Back</button>
+
+</body>
+
+</html>
